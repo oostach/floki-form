@@ -13,5 +13,8 @@ Style/StringLiteralsInInterpolation:
 Style/Documentation:
   Enabled: false
 
+Bundler/OrderedGems:
+  Enabled: false
+
 Layout/LineLength:
   Max: 160
