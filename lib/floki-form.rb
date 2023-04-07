@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'floki_form/view_extensions/form_helper'
 require_relative 'floki_form/version'
 
 module FlokiForm
