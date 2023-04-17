@@ -17,6 +17,12 @@ module FlokiForm
         @without_wrapper          = false
       end
 
+      def without_label?
+        return @without_label unless @without_label.nil?
+
+        @without_label = @options.delete(:label) || true
+      end
+
       def without_wrapper
         @without_wrapper = true
       end
