@@ -3,7 +3,7 @@
 module FlokiForm
   module Fields
     class Base
-      DEFAULT_INPUT_CLASSES    = %w[form-input].freeze
+      DEFAULT_INPUT_CLASSES = %w[form-input].freeze
 
       attr_reader :template, :object_name, :method, :options, :object
       attr_accessor :wrapper_class
@@ -25,6 +25,8 @@ module FlokiForm
 
       def without_wrapper
         @without_wrapper = true
+
+        self
       end
 
       def without_wrapper?

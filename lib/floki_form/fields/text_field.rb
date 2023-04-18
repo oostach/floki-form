@@ -10,7 +10,7 @@ module FlokiForm
       end
 
       def template_with_no_wrapper
-        label + template.check_box(object_name, method, options)
+        label + template.text_field(object_name, method, options)
       end
 
       def label

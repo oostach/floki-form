@@ -31,13 +31,13 @@ module FlokiForm
     private
 
     def build_field(method, field_type, options)
-      wrapper_options = options.delete(:wrapper) || {}
+      wrapper_options = options.delete(:wrapper)
       field_builder   = "FlokiForm::Fields::#{field_type.to_s.classify}".constantize.new(@template, object, @object_name, method, options)
 
       if wrapper_options.is_a?(FalseClass)
         field_builder.without_wrapper.render
       else
-        field_builder.wrapper_class = combine_wrapper_classes(wrapper_options[:class])
+        field_builder.wrapper_class = combine_wrapper_classes(wrapper_options&.fetch(:class, nil))
         field_builder.render
       end
     end
