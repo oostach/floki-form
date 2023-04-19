@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    floki-form (0.2.2)
+    floki-form (0.2.3)
       actionpack (>= 7.0.4.3)
       activemodel (>= 7.0.4.3)
       railties (>= 7.0.4.3)
