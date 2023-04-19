@@ -20,7 +20,7 @@ module FlokiForm
       def without_label?
         return @without_label unless @without_label.nil?
 
-        @without_label = @options.delete(:label) || true
+        @without_label = @options.delete(:label).is_a?(FalseClass)
       end
 
       def without_wrapper
@@ -48,6 +48,8 @@ module FlokiForm
       end
 
       def required?
+        return unless object.present?
+
         object.class.validators_on(method).any? { |validation| validation.is_a?(ActiveModel::Validations::PresenceValidator) }
       end
 
