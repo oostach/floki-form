@@ -14,18 +14,18 @@ module FlokiForm
     # @return [<String>] html template of the text field.
     #
     def text_field(method, options = {})
-      build_field(method, __method__, options.reverse_merge(wrapper: false))
+      build_field(method, __method__, options)
     end
 
     def inline_check_box(method, options = {})
       wrapper_classes = options.dig(:wrapper, :class).to_s.split | ['inline-checkbox']
       options[:wrapper] = (options[:wrapper] || {}).merge(class: wrapper_classes.join(' '))
 
-      build_field(method, __method__, options.reverse_merge(wrapper: false))
+      build_field(method, __method__, options)
     end
 
     def rich_text_area(method, options = {})
-      build_field(method, __method__, options.reverse_merge(wrapper: false))
+      build_field(method, __method__, options)
     end
 
     private
